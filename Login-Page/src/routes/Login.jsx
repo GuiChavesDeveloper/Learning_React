@@ -1,25 +1,35 @@
-import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import './Login.css'
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
+import '../styles/Login.css'
 
 const Login = () => {
+    const [userName, setUserName] = useState("");
+    const [userPassword, setPassWord] = useState("");
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert("Enviando os dados: " + userName + " - " + userPassword);
+    };
+
     return (
-        <div className='formulario'>
-            <Form className='p-4 rounded border border-white' id='formLogin'>
+        <div className="login">
+            <Form className='p-4 rounded border border-white' id='formLogin' onSubmit={handleSubmit}>
                 <h1 className='title'>Bem Vindo!</h1>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" placeholder="Enter" />
+                    <Form.Control type="email" placeholder="Email" required onChange={(e) => setUserName(e.target.value)} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Senha</Form.Label>
-                    <Form.Control type="password" placeholder="Senha" />
+                    <Form.Control type="password" placeholder="Senha" required onChange={(e) => setPassWord(e.target.value)} />
                 </Form.Group>
                 <Form.Group className="d-flex justify-content-between" controlId="rememberOfMe">
                     <Form.Check className='mt-2' type="checkbox" label="Lembre de mim" />
                     <div className='espaco'></div>
-                    <Button className='mb-3' variant="outline-primary">Esqueceu a senha?</Button>{' '}
+                    <Link to="/forgotPass"><Button className='mb-3' variant="outline-primary">Esqueceu a senha?</Button>{' '}</Link>
                 </Form.Group>
                 <Button className='col-md-12' variant="primary" type="submit">
                     Login

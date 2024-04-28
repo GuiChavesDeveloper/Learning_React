@@ -1,13 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
-import Login from './Components/loginComp/Login'
+import Login from './routes/Login.jsx'
 
 
 function App() {
   return (
     <>
       <div className="App">
-        <Login />
+        <h1>App</h1>
       </div>
     </>
   )

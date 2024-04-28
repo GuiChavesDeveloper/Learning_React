@@ -1,4 +1,5 @@
 body {
     height: auto;
-    background-image: url(./assets/bg-orange-normal.jpg);
+    background-image: url(./assets/bg-orange.jpg);
+    background-size: cover;
 }

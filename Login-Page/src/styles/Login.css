@@ -1,9 +1,12 @@
-.formulario {
+.login {
+    display: flex;
+    justify-content: center;
     margin-top: 15rem;
 }
 
 #formLogin {
     background-color: rgba(148, 144, 144, 0.7);
+    backdrop-filter: blur(10px);
 }
 
 .espaco {
@@ -21,4 +24,8 @@
 .linkRegistrar {
     text-decoration: none;
     color: rgb(0, 130, 190);
+}
+
+.linkRegistrar:hover {
+    text-decoration: underline;
 }
