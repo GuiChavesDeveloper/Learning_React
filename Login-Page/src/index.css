@@ -1,5 +1,6 @@
 body {
     height: auto;
-    background-image: url(./assets/bg-orange.jpg);
+    width: auto;
+    background-image: url(./assets/bg.svg);
     background-size: cover;
 }
